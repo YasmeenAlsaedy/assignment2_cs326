@@ -44,6 +44,12 @@ def GAN_training_function(G, D, GD, z_, y_, ema, state_dict, config):
                               x[counter], y[counter], train_G=False, policy=config['DiffAugment'],
                               CR=config['CR'] > 0, CR_augment=config['CR_augment'])
 
+                # get the D(x)
+                Dx = D(x, y[counter])
+                print(Dx)
+
+
+
                 D_loss_CR = 0
                 if config['CR'] > 0:
 
