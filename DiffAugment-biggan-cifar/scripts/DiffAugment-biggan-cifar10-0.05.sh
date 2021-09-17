@@ -8,7 +8,6 @@ source ./aconda/bin/activate cs326_ass2
 
 module load gcc/6.4.0
 
-cd /ibex/scratch/alsaedyy/cs326_projects/assignment2_cs326/DiffAugment-biggan-cifar
 
 python train.py --experiment_name DiffAugment-biggan-cifar10-0.05 --DiffAugment translation,cutout,color \
 --mirror_augment --use_multiepoch_sampler \
