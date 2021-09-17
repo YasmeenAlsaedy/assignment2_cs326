@@ -1,12 +1,7 @@
 #!/bin/bash
-#SBATCH --job-name=AllAgument
-<<<<<<< HEAD
-#SBATCH --gres=gpu:v100:8
-#SBATCH --cpus-per-task=48
-=======
+#SBATCH --job-name=TansANDColor
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=40
->>>>>>> 5fc5ede80891a85d8b922154119684dfa980d25d
 #SBATCH --time=72:00:00
 
 module load gcc/6.4.0
@@ -16,7 +11,7 @@ cd /ibex/scratch/alsaedyy/cs326_projects/assignment2_cs326/DiffAugment-biggan-ci
 python train.py --experiment_name DiffAugment-biggan-cifar10-0.05 --DiffAugment translation,color \
 --mirror_augment --use_multiepoch_sampler \
 --which_best FID --num_inception_images 10000 \
---shuffle --batch_size 50 --parallel \
+--shuffle --batch_size 80 --parallel \
 --num_G_accumulations 1 --num_D_accumulations 1 --num_epochs 5000 --num_samples 2500 \
 --num_D_steps 4 --G_lr 2e-4 --D_lr 2e-4 \
 --dataset C10 \
