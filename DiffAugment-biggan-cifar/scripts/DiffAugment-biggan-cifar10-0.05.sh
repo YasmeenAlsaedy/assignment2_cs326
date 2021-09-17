@@ -1,4 +1,15 @@
 #!/bin/bash
+SBATCH --job-name=AllAgument
+SBATCH --gres=gpu:v100:8
+SBATCH --cpus-per-task=40
+SBATCH --time=72:00:00
+
+source ./aconda/bin/activate cs326_ass2
+
+module load gcc/6.4.0
+
+cd /ibex/scratch/alsaedyy/cs326_projects/assignment2_cs326/DiffAugment-biggan-cifar
+
 python train.py --experiment_name DiffAugment-biggan-cifar10-0.05 --DiffAugment translation,cutout,color \
 --mirror_augment --use_multiepoch_sampler \
 --which_best FID --num_inception_images 10000 \
