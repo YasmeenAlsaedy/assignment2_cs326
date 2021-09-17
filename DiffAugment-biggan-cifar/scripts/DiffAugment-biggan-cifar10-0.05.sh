@@ -4,7 +4,7 @@ python train.py --experiment_name DiffAugment-biggan-cifar10-0.05 --DiffAugment 
 --which_best FID --num_inception_images 10000 \
 --shuffle --batch_size 50 --parallel \
 --num_G_accumulations 1 --num_D_accumulations 1 --num_epochs 5000 --num_samples 2500 \
---num_D_steps 4 --G_lr 2e-4 --D_rl 2e-4 \
+--num_D_steps 4 --G_lr 2e-4 --D_lr 2e-4 \
 --dataset C10 \
 --G_ortho 0.0 \
 --G_attn 0 --D_attn 0 \
