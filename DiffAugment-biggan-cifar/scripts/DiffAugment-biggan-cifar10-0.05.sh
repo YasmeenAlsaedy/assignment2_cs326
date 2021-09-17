@@ -1,7 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=AllAgument
+<<<<<<< HEAD
+#SBATCH --gres=gpu:v100:8
+#SBATCH --cpus-per-task=48
+=======
 #SBATCH --gres=gpu:4
 #SBATCH --cpus-per-task=40
+>>>>>>> 5fc5ede80891a85d8b922154119684dfa980d25d
 #SBATCH --time=72:00:00
 
 module load gcc/6.4.0
