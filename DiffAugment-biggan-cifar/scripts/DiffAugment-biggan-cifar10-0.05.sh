@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=AllAgument
-#SBATCH --gres=gpu:v100:8
+#SBATCH --gres=gpu:v100:12
 #SBATCH --cpus-per-task=80
 #SBATCH --time=72:00:00
 
@@ -10,7 +10,7 @@ module load gcc/6.4.0
 python train.py --experiment_name DiffAugment-biggan-cifar10-0.05 --DiffAugment translation,cutout,color \
 --mirror_augment --use_multiepoch_sampler \
 --which_best FID --num_inception_images 10000 \
---shuffle --batch_size 50 --parallel \
+--shuffle --batch_size 80 --parallel \
 --num_G_accumulations 1 --num_D_accumulations 1 --num_epochs 5000 --num_samples 2500 \
 --num_D_steps 4 --G_lr 2e-4 --D_lr 2e-4 \
 --dataset C10 \
