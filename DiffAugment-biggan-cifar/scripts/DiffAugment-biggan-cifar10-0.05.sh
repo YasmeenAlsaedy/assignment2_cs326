@@ -4,8 +4,6 @@
 #SBATCH --cpus-per-task=40
 #SBATCH --time=72:00:00
 
-source ./conda/bin/activate cs326_ass2
-
 module load gcc/6.4.0
 
 
