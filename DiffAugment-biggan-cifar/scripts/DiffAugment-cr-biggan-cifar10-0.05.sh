@@ -1,5 +1,14 @@
 #!/bin/bash
-python train.py --experiment_name DiffAugment-cr-biggan-cifar10-0.05 --DiffAugment translation,cutout,color --CR 10 --CR_augment "" \
+#SBATCH --job-name=CRWithAugment
+#SBATCH --gres=gpu:4
+#SBATCH --cpus-per-task=40
+#SBATCH --time=72:00:00
+
+module load gcc/6.4.0
+
+cd /ibex/scratch/alsaedyy/cs326_projects/assignment2_cs326/DiffAugment-biggan-cifar
+
+python train.py --experiment_name DiffAugment-cr-biggan-cifar10-0.05 --DiffAugment cutout,color --CR 10 --CR_augment "" \
 --mirror_augment --use_multiepoch_sampler \
 --which_best FID --num_inception_images 10000 \
 --shuffle --batch_size 50 --parallel \

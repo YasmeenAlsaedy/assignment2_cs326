@@ -2,7 +2,6 @@
 *.pyc
 /logs/
 /weights/
-/samples/
 /models/
 /data/
 __pycache__/
