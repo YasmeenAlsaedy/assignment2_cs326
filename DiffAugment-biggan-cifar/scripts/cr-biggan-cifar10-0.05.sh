@@ -1,4 +1,13 @@
 #!/bin/bash
+#SBATCH --job-name=CRNoAugment
+#SBATCH --gres=gpu:4
+#SBATCH --cpus-per-task=40
+#SBATCH --time=72:00:00
+
+module load gcc/6.4.0
+
+cd /ibex/scratch/alsaedyy/cs326_projects/assignment2_cs326/DiffAugment-biggan-cifar
+
 python train.py --experiment_name cr-biggan-cifar10-0.05 --CR 10 \
 --mirror_augment --use_multiepoch_sampler \
 --which_best FID --num_inception_images 10000 \
