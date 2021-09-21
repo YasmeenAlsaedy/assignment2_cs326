@@ -48,12 +48,15 @@ def GAN_training_function(G, D, GD, z_, y_, ema, state_dict, config):
                 # Dx = D(x, y[counter])
                 # print(Dx)
 
+                # my stupid code
+
 
 
                 D_loss_CR = 0
                 if config['CR'] > 0:
-
-                    # to do
+                    D_fake, D_real, D_real_aug = D_scores
+                    D_loss_CR = torch.pow((D_real - D_real_aug), 2)
+                             
                     continue
 
                 else:
