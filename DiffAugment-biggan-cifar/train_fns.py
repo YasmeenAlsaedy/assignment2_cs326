@@ -55,9 +55,8 @@ def GAN_training_function(G, D, GD, z_, y_, ema, state_dict, config):
                 D_loss_CR = 0
                 if config['CR'] > 0:
                     D_fake, D_real, D_real_aug = D_scores
-                    D_loss_CR = torch.pow((D_real - D_real_aug), 2)
-
-
+                    D_loss_CR = torch.mean((D_real_aug - D_real) ** 2) * config['CR']
+                    
                 else:
                     D_fake, D_real = D_scores
 
