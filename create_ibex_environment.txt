@@ -3,7 +3,7 @@ Step 1: create an conda environment
 conda create -n cs394d_ass1 python=3.6
 
 Step 2: activate your conda environment
-conda activate cs326_ass1
+conda activate cs394d_ass1
 
 Step 3: install necessary dependencies. 
 conda install tensorflow-gpu==1.15
